@@ -1,0 +1,56 @@
+/*23. Escreva um algoritmo que leia um número inteiro A e uma matriz M (30,30) de inteiros. Conte quantos 
+valores da matriz M são iguais a A. Crie, a seguir, uma matriz X contendo todos os elementos de M diferentes 
+de A (quando for igual a A, insira um 0). Mostre os resultados*/
+#include <iostream>
+#include <math.h>
+using namespace std;
+int main() {
+  int i, j, t1=30, t2=30, num, cont = 0, r;
+
+  int m[t1][t2];
+  bool flag = true;
+
+  cout<<"\n\nPreecha a matriz M: ";
+  for(i=0; i<t1; i++){
+    for(j=0; j<t2; j++){
+      cout<<"\n\nDigite o termo " << i << "," << j << ": ";
+      cin>>m[i][j];
+    }
+  }
+
+  cout<<"\n\nDigite um valor inteiro: ";
+  cin>>num;
+
+  
+  
+  for(i=0; i<t1; i++){
+    for(j=0; j<t2; j++){
+      if(m[i][j]==num){
+        cont++;
+      }
+    }
+  }
+  r = sqrt(cont);
+  
+  
+  if(r==1 || r==2 || r==3 || r==4|| r==5|| r==6|| r==7|| r==8|| r==9){
+    int mX[r][r];
+    for(i=0; i<r; i++){
+      for(j=0; j<r; j++){
+        if(m[i][j]==num){
+                mX[i][j] = m[i][j];  
+        }
+      }
+    }
+    
+    for(i=0; i<r; i++){
+      for(j=0; j<r; j++){
+        cout<<mX[i][j];
+      }
+    }
+      
+  
+      
+  }
+
+}
